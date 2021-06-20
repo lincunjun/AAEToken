@@ -188,8 +188,6 @@ async function getERC20Balance() {
 }
 
 
-
-
 /**
  * Fetch account data for UI when
  * - User switches accounts in wallet
