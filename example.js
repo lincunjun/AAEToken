@@ -141,7 +141,7 @@ const promisify = (inner) =>
         })
     );
 
-
+    
 async function getBalance() {
     var address, wei, balance
     address = document.getElementById("address").value;
