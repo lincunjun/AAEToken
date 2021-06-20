@@ -1,13 +1,3 @@
-window.addEventListener('load', function () {
-    if (typeof web3 !== 'undefined') {
-        console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-        window.web3 = new Web3(web3.currentProvider);
-    } else {
-        console.log('No Web3 Detected... using HTTP Provider')
-        window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/<APIKEY>"));
-    }
-})
-
 "use strict";
 
 /**
@@ -151,13 +141,13 @@ const promisify = (inner) =>
         })
     );
 
-    
+
 async function getBalance() {
     var address, wei, balance
     address = document.getElementById("address").value;
     wei = promisify(cb => web3.eth.getBalance(address, cb))
     try {
-        balance = web3.fromWei(await wei, 'ether')
+        balance = web3.utils.fromWei(await wei, 'ether')
         document.getElementById("output").innerHTML = balance + " ETH";
     } catch (error) {
         document.getElementById("output").innerHTML = error;
