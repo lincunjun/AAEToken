@@ -174,7 +174,7 @@ async function getERC20Balance() {
     tokenContract = web3.eth.contract(contractABI).at(contractAddress)
 
     decimals = promisify(cb => tokenContract.decimals(cb))
-    balance = promisify(cb => tokenContract.balanceOf(address, cb))
+    balance = promisify(cb => tokenContract.balanceOf(walletAddress, cb))
     name = promisify(cb => tokenContract.name(cb))
     symbol = promisify(cb => tokenContract.symbol(cb))
 
