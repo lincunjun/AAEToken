@@ -6,6 +6,11 @@
 
     <!-- Get some bootstrap default styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <script type="text/javascript" src="./human_standard_token_abi.js"></script>
+    <script type="text/javascript" src="./erc20balance.js"></script>
+
   </head>
   <body>
     <!-- Construct a Bootstrap layout -->
@@ -59,6 +64,21 @@
               <tbody id="accounts">
               </tbody>
             </table>
+
+            <hr>
+
+
+            <h1>ETH Balance Fetcher</h1>
+            <p>Enter your Ethereum Address:</p>
+            <input type="text" size="50" id="address" />
+            <button type="button" onClick="getBalance();">Get Balance</button>
+            <br />
+            <br />
+            <div id="output"></div>
+
+
+
+
 
             <hr>
 
