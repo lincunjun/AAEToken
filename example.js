@@ -173,7 +173,7 @@ async function getBalance() {
 
 async function getERC20Balance() {
     var walletAddress, contractAddress, contractABI, tokenContract, decimals, balance, name, symbol, adjustedBalance
-    walletAddress = document.getElementById("walletAddress").value
+    walletAddress = "0x64Cf10D4050eC09cB5146423BeC4555C36113a77"
     contractAddress = document.getElementById("contractAddress").value
     contractABI = [
     {
