@@ -181,10 +181,10 @@ async function getERC20Balance() {
   
   
 
-    decimals = promisify(cb => await tokenContract.methods.decimals(cb));
-    balance = promisify(cb => await tokenContract.methods.balanceOf(address,cb));
-    name = promisify(cb => await tokenContract.methods.name(cb));
-    symbol = promisify(cb => await tokenContract.methods.symbol(cb));
+    decimals = await tokenContract.methods.decimals(cb));
+    balance = await tokenContract.methods.balanceOf(address,cb));
+    name = await tokenContract.methods.name(cb));
+    symbol = await tokenContract.methods.symbol(cb));
 
     try {
         adjustedBalance = await balance / Math.pow(10, await decimals);
