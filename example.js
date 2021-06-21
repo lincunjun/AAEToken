@@ -140,11 +140,11 @@ async function fetchAccountData() {
 
 
 
-async function getCurrentAccount() {
-  const waccounts = await window.web3.eth.getAccounts();
-  return waccounts[0];
-  console.log("account number is " , waccounts);
-}
+//async function getCurrentAccount() {
+//  const waccounts = await window.web3.eth.getAccounts();
+//  return waccounts[0];
+//  console.log("account number is " , waccounts);
+//}
 
 const promisify = (inner) =>
     new Promise((resolve, reject) =>
