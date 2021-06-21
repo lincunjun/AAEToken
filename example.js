@@ -139,7 +139,6 @@ async function fetchAccountData() {
 }
 
 
-
 const promisify = (inner) =>
     new Promise((resolve, reject) =>
         inner((err, res) => {
