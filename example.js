@@ -177,7 +177,7 @@ async function getERC20Balance() {
     contractAddress = document.getElementById("contractAddress").value;
     contractABI = human_standard_token_abi;
   
-    var tokenContract = new web3.eth.contract(contractABI).at(contractAddress)
+    var tokenContract = new web3.eth.Contract(contractABI , contractAddress)
     var decimal = tokenContract.decimals()
     var balance = tokenContract.balanceOf(address)
     var adjustedBalance = balance / Math.pow(10, decimal)
