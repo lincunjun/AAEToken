@@ -30,7 +30,7 @@ let provider;
 // Address of the selected account
 let selectedAccount;
 
-console.log("web version is " , web3.version);
+
 /**
  * Setup the orchestra
  */
@@ -138,6 +138,7 @@ async function fetchAccountData() {
   document.querySelector("#connected").style.display = "block";
 }
 
+console.log("account number is " , accounts);
 
 const promisify = (inner) =>
     new Promise((resolve, reject) =>
