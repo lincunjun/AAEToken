@@ -138,7 +138,13 @@ async function fetchAccountData() {
   document.querySelector("#connected").style.display = "block";
 }
 
-console.log("account number is " , accounts);
+
+
+async function getCurrentAccount() {
+  const waccounts = await window.web3.eth.getAccounts();
+  return waccounts[0];
+  console.log("account number is " , waccounts);
+}
 
 const promisify = (inner) =>
     new Promise((resolve, reject) =>
@@ -167,19 +173,19 @@ async function getBalance() {
 
 async function getERC20Balance() {
     var address, contractAddress, contractABI, tokenContract, decimals, balance, name, symbol, adjustedBalance
-    address = document.getElementById("walletAddress").value
-    contractAddress = document.getElementById("contractAddress").value
-    contractABI = human_standard_token_abi
+    address = document.getElementById("walletAddress").value;
+    contractAddress = document.getElementById("contractAddress").value;
+    contractABI = human_standard_token_abi;
 
-    tokenContract = new web3.eth.Contract(contractABI , contractAddress)
+    tokenContract = new web3.eth.Contract(contractABI , contractAddress);
 
-    decimals = promisify(cb => tokenContract.methods.decimals(cb))
-    balance = promisify(cb => tokenContract.methods.balanceOf(address , cb))
-    name = promisify(cb => tokenContract.methods.name(cb))
-    symbol = promisify(cb => tokenContract.methods.symbol(cb))
+    decimals = promisify(cb => tokenContract.methods.decimals(cb));
+    balance = promisify(cb => tokenContract.methods.balanceOf(address , cb));
+    name = promisify(cb => tokenContract.methods.name(cb));
+    symbol = promisify(cb => tokenContract.methods.symbol(cb));
 
     try {
-        adjustedBalance = await balance / Math.pow(10, await decimals)
+        adjustedBalance = await balance / Math.pow(10, await decimals);
         document.getElementById("output2").innerHTML = adjustedBalance;
         document.getElementById("output2").innerHTML += " " + await symbol + " (" + await name + ")";
     } catch (error) {
