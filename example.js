@@ -30,7 +30,7 @@ let provider;
 // Address of the selected account
 let selectedAccount;
 
-
+console.log(web3.version);
 /**
  * Setup the orchestra
  */
