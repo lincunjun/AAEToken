@@ -179,8 +179,7 @@ async function getERC20Balance() {
 
     tokenContract = new web3.eth.Contract(contractABI , contractAddress);
   
-  console.log(tokenContract.version())
-
+  
 
     decimals = promisify(cb => tokenContract.decimals(cb));
     balance = promisify(cb => tokenContract.balanceOf(address,cb));
