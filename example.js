@@ -183,8 +183,8 @@ async function getERC20Balance() {
     balance = promisify(cb => tokenContract.methods.balanceOf(address));
     name = promisify(cb => tokenContract.methods.name());
     symbol = promisify(cb => tokenContract.methods.symbol());
-  console.log(decimals)
-  console.log(balance)
+  console.log(decimals);
+  console.log(balance);
   console.log(name);
   console.log(symbol);
 
