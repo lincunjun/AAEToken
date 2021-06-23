@@ -185,11 +185,11 @@ async function getERC20Balance() {
 //     name = promisify(cb => tokenContract.methods.name(cb))
 //     symbol = promisify(cb => tokenContract.methods.symbol(cb))
  
-      decimals = promisify(cb => this.method.decimals(cb))
+      decimals = promisify(cb => this.method.decimals())
    console.log(decimals);
-    balance = promisify(cb => this.method.balanceOf(address, cb))
-    name = promisify(cb => this.method.name(cb))
-    symbol = promisify(cb => this.method.symbol(cb))
+    balance = promisify(cb => this.method.balanceOf(address))
+    name = promisify(cb => this.method.name())
+    symbol = promisify(cb => this.method.symbol())
   
   console.log(balance);
   console.log(name);
